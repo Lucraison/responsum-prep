@@ -1,26 +1,111 @@
-body {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+#root {
   display: flex;
   justify-content: center;
-  padding: 40px;
+  align-items: center;
+}
+
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-row input:focus {
+  border-color: #555;
 }
 
 ul {
   list-style: none;
-  padding: 0;
 }
 
 li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  gap: 8px;
 }
 
-button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  border-radius: 5px;
+li span {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
 }
 
 .completed {
   text-decoration: line-through;
-  color: #059a0f;
+  color: #aaa;
+}
+
+button {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.btn-add {
+  background-color: #222;
+  color: white;
+}
+
+.btn-complete {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.btn-incomplete {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.btn-delete {
+  background-color: #fdecea;
+  color: #c62828;
 }

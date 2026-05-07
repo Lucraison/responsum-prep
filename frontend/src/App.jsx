@@ -51,28 +51,34 @@ function App() {
   }
 
   return (
-    <>
+    <div className="card">
       <h1>My Todos</h1>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button onClick={addTodo}>Add Todo</button>
+      <div className="input-row">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Add a new todo..."
+        />
+        <button className="btn-add" onClick={addTodo}>Add</button>
+      </div>
       <ul>
         {todos.map((todo) => (
           <li key={todo._id}>
             <span className={todo.completed ? 'completed' : ''}>
               {todo.title}
             </span>
-            <button onClick={() => deleteTodo(todo._id)}>Delete</button>
-            <button onClick={() => updateTodo(todo._id, { completed: !todo.completed })}>
-              {todo.completed ? 'Mark Incomplete' : 'Mark Complete'}
+            <button
+              className={todo.completed ? 'btn-incomplete' : 'btn-complete'}
+              onClick={() => updateTodo(todo._id, { completed: !todo.completed })}
+            >
+              {todo.completed ? 'Undo' : 'Done'}
             </button>
+            <button className="btn-delete" onClick={() => deleteTodo(todo._id)}>Delete</button>
           </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }
 
